@@ -1,0 +1,8 @@
+import trustbroker.Book
+
+model {
+	Iterable<Book> bookList
+}
+
+json tmpl.book(bookList ?: [])
+
