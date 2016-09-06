@@ -16,5 +16,5 @@ Showcase how to use *JSON Web Tokens(JWT)* to secure federated SaaS APIs, deploy
 
 ### Start Order
 1. Start [MongoDB](./MONGO.md)
-2. Start [Trust Broker](./trust-broker/README.md) (gradle trust-broker:bootRun)
-3. Start [GrAngular](./grangular/README.md) (gradle grangular:bootRun)
+2. Start [Trust Broker](./trust-broker/) (gradle trust-broker:bootRun)
+3. Start [GrAngular](./grangular/) (gradle grangular:bootRun)
