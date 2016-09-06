@@ -2,40 +2,59 @@ Trust Broker
 ============
 
 Multi Identity Provider / Broker - take username/password, APIKey, Facebook or Google identity; issue **JSON Web Token.**
+Provide `granular security` and `multitenancy` for your SaaS APIs.
+
+### Features
+
+- [x] JSON Web Tokens
+- [x] CORS Enabled
+- [x] Multi-tenancy AuthN for your SaaS APIs.
+- [x] Custom *UserDetailsService* for Multi-Tenancy
+- [ ] Support pluggable authenticate strategies ranging from 
+    - [x] Verifying a username and password with DB or LDAP 
+    - [ ] Delegated authentication using OAuth.
+    - [ ] Federated authentication using OpenID Connect.
+- [ ] Account locking 
+    - [ ] user's account will be "locked" after some number of consecutive failed login attempts.
+    - [ ] user's account will become unlocked once a sufficient amount of time has passed.
+    - [ ] system will reply the reason for a failed login attempt to the application.
 
 
-### Features 
+#### Setup
 
-1. Provide `granular security` and `multitenancy` for your SaaS APIs.
-2. Support pluggable authenticate strategies ranging from 
-    1. verifying a username and password with DB or LDAP
-    2. delegated authentication using OAuth or 
-    3. federated authentication using OpenID Connect.
-3. Account locking 
-    1. user's account will be "locked" after some number of consecutive failed login attempts.
-    2. user's account will become unlocked once a sufficient amount of time has passed.
-    3. system will expose the reason for a failed login attempt to the application.
+1. Make sure [MongoDB](../MONGO.md) is running
+2. Start Trust Broker Grails App
 
+#### Run  
 
-### Run
 ```bash
+cd trust-broker
 grails
 grails> run
+# Grails application running at http://localhost:9080 in environment: development
+grails> stop
 ```
 
+#### Test
 To get a token, make a request to the login endpoint provided by the plugin:
 
 ```bash
-curl -i -H "Content-Type: application/json" --data '{"username":"basic3","password":"basic123"}' 0:8080/api/login
+curl -i -H "Content-Type: application/json" --data '{"username":"basic3","password":"basic123"}' 0:9080/api/login
 ```
+
 Verify access_token with https://jwt.io/
 > default secret : qrD6h8K6S9503Q06Y6Rfk21TErImPYqa
 
-Copy the access_token part of the response, and make a request to the original endpoint, passing the token in a header:
+Copy the access_token part of the response, and make a request to the original endpoint, passing the token in the header:
 
 ```bash
-curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:8080/api/books
-curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:8080/api/test
+curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:9080/api/books
+curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:9080/api/test
 ```
 
-curl -i -H "Authorization: Bearer " 0:8080/api/books
+#### Build
+
+#### Deploy
+
+
+

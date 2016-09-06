@@ -1,5 +1,5 @@
-Do it yourself - RxGrails
-=========================
+Do it yourself - GrAngular
+==========================
 
 ### Create App
 ```
@@ -8,9 +8,9 @@ grails create-app grangular --profile angular --features rx-mongodb,json-views,a
  
 ### Setup
 ```
+cd grangular
 grails 
 # at grails prompt: Generate Todo domain, controller and views
-# create-domain-class Todo
 generate-rx-all Todo
 ```
 

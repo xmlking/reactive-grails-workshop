@@ -13,5 +13,7 @@ class UrlMappings {
         "/"(view: '/index')
         "500"(view: '/error')
         "404"(view: '/notFound')
+        "/api/todos"(resources:'todo')
+        "/api/guest/stream"(resources:'stream')
     }
 }

@@ -1,0 +1,7 @@
+import grangular.Todo
+
+model {
+	Todo todo
+}
+
+json tmpl.todo(todo)

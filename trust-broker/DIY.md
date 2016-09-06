@@ -8,12 +8,13 @@ grails create-app TrustBroker --profile rest-api --features  mongodb,json-views,
  
 ### Setup
 ```
+cd trust-broker
 grails 
 # at grails prompt: Generate User, Role, UserRole domains
 s2-quickstart trustbroker User Role
 create-domain-class Organization
 create-domain-class Book
-create-restful-controller trustbroker.Book
+create-restful-controller Book
 generate-views Book
 ```
 

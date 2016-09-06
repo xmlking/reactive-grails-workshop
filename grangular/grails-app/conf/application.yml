@@ -1,10 +1,16 @@
 ---
+# Extra configuration property.
+# Value is shown on grails-app/views/index.gsp.
+app:
+    welcome:
+        title: Welcome to Grails
+---
 grails:
     mongodb:
         host: localhost
         port: 27017
-        username: ""
-        password: ""
+        username: "grails"
+        password: "grails123"
         databaseName: "grangular"
 
 ---

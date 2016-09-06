@@ -1,35 +1,20 @@
 Reactive Grails Workshop
 ========================
 
-### Demonstration
+Showcase how to use *JSON Web Tokens(JWT)* to secure federated SaaS APIs, deployed as *Microservices*.
 
-- [ ] Trust Broker
-    - [x] JSON Web Tokens
-    - [x] Multi-tenancy AuthN for your SaaS APIs.
-    - [x] Verifying a username and password with DB or LDAP 
-    - [ ] Delegated authentication using OAuth.
-    - [ ] Fderated authentication using OpenID Connect.
-    - [ ] Account locking 
-            
-- [ ] Grangular
-    - [x] SaaS style REST API
-    - [x] Multi-Tenancy Modes - DISCRIMINATOR
-    - [x] RxGORM with Mongo    
-    - [x] CORS Enabled
-    - [x] Reactive Controller
-    - [x] RxGORM with MongoDB
-    - [x] Custom Properties  
-    - [x] Custom Banner 
-    - [x]  
-    - [x]                    
-    - [x] Angular 1.5
-    - [ ] Angular 2.0
-    - [ ] Reactive UX with RxJS
+- [x] End-to-End Reactive Programming. 
+- [x] Event-Driven Microservices
+- [ ] Deploy and scale with Docker.
+- [ ] Cloud-Native [12-factors](https://12factor.net/) implementation with **Spring Cloud**.
 
-    
-### Setup
 
-### Start
-1. Start MongoDB
-2. Start Trust Broker (gradle trust-broker:bootRun)
-3. Start grangular (gradle grangular:bootRun)
+### Prerequisite
+1. Install Gradle 3.0 via [SDKMAN](http://sdkman.io/)
+2. Install Grails 3.2.0 RC1 via [SDKMAN](http://sdkman.io/)
+
+
+### Start Order
+1. Start [MongoDB](./MONGO.md)
+2. Start [Trust Broker](./trust-broker/README.md) (gradle trust-broker:bootRun)
+3. Start [GrAngular](./grangular/README.md) (gradle grangular:bootRun)

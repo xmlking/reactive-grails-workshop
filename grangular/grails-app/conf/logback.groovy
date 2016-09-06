@@ -19,11 +19,14 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
     }
     logger("StackTrace", ERROR, ['FULL_STACKTRACE'], false)
     root(ERROR, ['STDOUT', 'FULL_STACKTRACE'])
+
+    //Added by Sumo
+    logger 'grails.app.controllers', INFO, ['STDOUT'], false
+    logger 'grails.app.controllers.grangular', DEBUG, ['STDOUT'], false
+    logger 'grails.app.services', INFO, ['STDOUT'], false
 }
 else {
     root(ERROR, ['STDOUT'])    
 }
-
-
 
 

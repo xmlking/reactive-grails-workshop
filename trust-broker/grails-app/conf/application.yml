@@ -1,4 +1,7 @@
 ---
+server:
+  port: 9080
+---
 grails:
     mongodb:
         host: localhost
