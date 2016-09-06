@@ -27,7 +27,8 @@ url-mappings-report
 
 
 Ref:
-https://grails-plugins.github.io/grails-rxjava/latest/
-http://gorm.grails.org/snapshot/rx/manual/index.html
-http://mrhaki.blogspot.com
+1. RxJava: https://grails-plugins.github.io/grails-rxjava/latest/
+2. RxGORM http://gorm.grails.org/snapshot/rx/manual/index.html
+3. Grails Angular:  http://grails-plugins.github.io/grails-angular-scaffolding/latest/
+4. http://mrhaki.blogspot.com
 
