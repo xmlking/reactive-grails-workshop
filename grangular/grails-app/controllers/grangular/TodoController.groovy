@@ -32,6 +32,15 @@ class TodoController implements RxController {
         }
     }
 
+    //SUMO: Custom action
+    @CompileStatic(SKIP)
+    def pending(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        zip( Todo.findAllByDone(false, params), Todo.countByDone(false) ) { List todoList, Number count ->
+            rx.render view:"index", model:[todoList: todoList, todoCount: count]
+        }
+    }
+
     def show() {
         Todo.get((Serializable)params.id)
     }

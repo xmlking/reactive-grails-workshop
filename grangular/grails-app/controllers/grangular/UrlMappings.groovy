@@ -14,6 +14,7 @@ class UrlMappings {
         "500"(view: '/error')
         "404"(view: '/notFound')
         "/api/todos"(resources:'todo')
+        "/api/pendingTodos"(controller: 'todo', action: 'pending')
         "/api/guest/stream"(resources:'stream')
     }
 }
