@@ -42,7 +42,13 @@ class TodoController implements RxController {
     }
 
     def show() {
-        Todo.get((Serializable)params.id)
+        Todo.get(params.id?.toString())
+                .map { Todo todo ->
+            rx.respond(todo)
+        }
+        .switchIfEmpty(
+                just( rx.render(status: NOT_FOUND) )
+        )
     }
 
     def save() {
