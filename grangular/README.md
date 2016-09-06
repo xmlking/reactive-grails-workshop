@@ -13,7 +13,7 @@ RxJS(Angular) ->  Reactive Controller ->  RxGORM -> MongoDB
     - [x] CORS Enabled
     - [x] Reactive Controller
     - [x] RxGORM with MongoDB
-    - [x] Custom [Properties](grails-app/conf/application.yml)
+    - [x] Custom [Properties](grails-app/conf/application.yml#L6)
     - [x] Custom Banner 
 2. *Single Page Application(SPA)* front-end app.
     - [x] Angular 1.5
@@ -23,7 +23,7 @@ RxJS(Angular) ->  Reactive Controller ->  RxGORM -> MongoDB
 #### Setup
 
 1. Make sure [MongoDB](../MONGO.md) is running
-1. Make sure [Trust Broker](../trust-broker/README.md) is running
+1. Make sure [Trust Broker](../trust-broker/) is running
 2. Start GrAngular Grails App
 
 #### Run
