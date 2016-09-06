@@ -45,6 +45,8 @@ grails-app/conf/trustbroker-config.properties
 
 # node module
 /node_modules/
+.asscache
+grails-app/assets/vendor
 
 ### Gradle ###
 .gradle
