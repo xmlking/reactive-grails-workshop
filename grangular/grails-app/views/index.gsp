@@ -24,6 +24,8 @@
 
 <body ng-app="grangular" ng-controller="IndexController as indexCtrl">
 
+<header></header>
+<!--
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -73,7 +75,7 @@
             </div>
         </div>
     </div>
-
+-->
     <div ui-view></div>
 
     <div class="footer" role="contentinfo"></div>

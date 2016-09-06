@@ -1,20 +1,59 @@
 //= wrapped
 //= require /angular/angular
 //= require /angular/angular-resource
+//= require /angular/angular-jwt
+//= require /angular/angular-storage
+
 //= require_self
 //= require_tree services
 //= require_tree controllers
 //= require_tree directives
 //= require_tree templates
 
-angular.module("grangular.core", ['ngResource'])
+angular.module("grangular.core", ['ngResource', 'angular-storage', 'angular-jwt'])
     .constant("contextPath", window.contextPath)
-    .config(config);
+    .config(config)
+    .run(run);
 
-function config($httpProvider) {
+function config(jwtInterceptorProvider, jwtOptionsProvider, $httpProvider) {
     $httpProvider.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
     $httpProvider.interceptors.push(httpRequestInterceptor);
+
+    jwtOptionsProvider.config({
+        whiteListedDomains: ['api1.myapp.com', 'localhost']
+    });
+
+    jwtInterceptorProvider.tokenGetter = function(UserService) {
+        return UserService.getToken();
+    };
+
+    $httpProvider.interceptors.push('jwtInterceptor');
+    $httpProvider.interceptors.push('AuthInterceptor')
+
 }
+
+function run($rootScope, $state, store, jwtHelper) {
+    $rootScope.$on('$stateChangeStart', function(event, toState) {
+        if (toState.requiresLogin) {
+            if (!store.get('token') || jwtHelper.isTokenExpired(store.get('token'))) {
+                event.preventDefault();
+                $state.go('login', {redirect: toState.name});
+            }
+        }
+        if (store.get('token') && !jwtHelper.isTokenExpired(store.get('token'))
+            && toState.name === 'login') {
+            event.preventDefault();
+            $state.go('index')
+        }
+    });
+
+    $rootScope.$on('$stateChangeSuccess', function(event, toState) {
+        if (toState) {
+            $rootScope.pageTitle = angular.isDefined( toState.pageTitle ) ? toState.pageTitle : toState.name  ;
+        }
+    });
+}
+
 
 
 function isIso8601(value) {

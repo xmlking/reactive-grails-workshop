@@ -1,0 +1,46 @@
+<!--<table>-->
+    <!--<tbody>-->
+    <!--<tr>-->
+        <!--<td>-->
+            <!--Username:-->
+        <!--</td>-->
+        <!--<td>-->
+            <!--<input type="text" name="username" ng-model="vm.user.username" />-->
+        <!--</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td>-->
+            <!--Password:-->
+        <!--</td>-->
+        <!--<td>-->
+            <!--<input type="password" name="password" ng-model="vm.user.password" />-->
+        <!--</td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+        <!--<td colspan="2">-->
+            <!--<button type="button" ng-click="vm.login()">Login</button>-->
+        <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+<!--</table>-->
+<style>
+.login {
+width: 40%;
+}
+</style>
+
+<div class="login jumbotron center-block">
+    <h1>Login</h1>
+    <form role="form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" ng-model="vm.user.username" id="username" placeholder="Username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" ng-model="vm.user.password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="vm.login(vm.user)">Submit</button>
+    </form>
+    <!--<a ui-sref="ctrl.signup()">Click here to Signup</a>-->
+</div>

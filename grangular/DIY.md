@@ -30,7 +30,7 @@ url-mappings-report
 
 Ref:
 1. RxJava: https://grails-plugins.github.io/grails-rxjava/latest/
-2. RxGORM http://gorm.grails.org/snapshot/rx/manual/index.html
+2. RxGORM http://gorm.grails.org/rx/latest/
 3. Grails Angular:  http://grails-plugins.github.io/grails-angular-scaffolding/latest/
 4. alvarosanchez's workshop: http://alvarosanchez.github.io/grails-angularjs-springsecurity-workshop/
 4. http://mrhaki.blogspot.com
