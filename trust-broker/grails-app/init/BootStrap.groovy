@@ -13,10 +13,13 @@ class BootStrap {
     }
 
     private void createUsers() {
+        Role superRole = new Role(authority: 'ROLE_SUPERADMIN').save(flush: true, failOnError:true)
         Role adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true, failOnError:true)
         Role userRole = new Role(authority: 'ROLE_USER').save(flush: true, failOnError:true)
+        User superUser = new User(firstName: 'super', lastName: 'demo', email: 'super@demo.com', username: 'super', password: 'super123').save(flush: true, failOnError:true)
         User adminUser = new User(firstName: 'sumo', lastName: 'demo', email: 'sumo@demo.com', username: 'admin', password: 'admin123').save(flush: true, failOnError:true)
         User basicUser = new User(firstName: 'fn_basic', lastName: 'ln_basic', email: 'basic@demo.com', username: 'user', password: 'user123').save(flush: true, failOnError:true)
+        UserRole.create superUser, superRole, true
         UserRole.create adminUser, adminRole, true
         UserRole.create basicUser, userRole, true
 
