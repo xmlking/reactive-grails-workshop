@@ -22,7 +22,13 @@ function config($stateProvider) {
         .state('todo.list', {
             url: "",
             templateUrl: "/grangular/todo/list.html",
-            controller: "TodoListController as vm"
+            controller: "TodoListController as vm",
+            resolve: {
+                todoList: function ($stateParams, Todo) {
+                    var max = 10, offset = 0;
+                    return Todo.list({max: max, offset: offset}).$promise;
+                }
+            }
         })
         .state('todo.create', {
             url: "/create",
