@@ -60,6 +60,7 @@ curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:8080/api/test
 curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:8080/api/books
 # Try with no token
 curl -i  0:8080/api/guest/stream
+curl -i  0:8080/api/guest/application
 ```
 
 #### Build

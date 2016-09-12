@@ -14,9 +14,10 @@ grails
 create-domain-class Todo
 # modifiy 'Todo' class to implements RxMongoEntity<Todo>
 generate-rx-all Todo
+# add UrlMapping for Todo i.e.,  "/api/todos"(resources:'todo') in UrlMappings.groovy
 # Generate Angular artifacts for Todo
-ng-generate-all grangular.Todo 
-# Repete above commands for 'Book'
+ng-generate-all grangular.Todo  true
+# Repete above steps for 'Book'
 ```
 
 

@@ -14,6 +14,7 @@ grails
 s2-quickstart trustbroker User Role
 create-domain-class Organization
 create-restful-controller User
+# add UrlMapping for User i.e.,"/api/users"(resources:'user') in UrlMappings.groovy
 generate-views User
 ```
 
