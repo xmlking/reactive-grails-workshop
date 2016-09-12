@@ -6,7 +6,7 @@
 
 <div id="content" role="main">
     <section class="row colset-2-its">
-        <h1>Welcome to Grails</h1>
+        <h1>Welcome {{ vm.username || 'to Grails'}}</h1>
 
         <p>
             Congratulations, you have successfully started your first Grails application! At the moment
@@ -18,11 +18,17 @@
         <div id="controllers" role="navigation">
             <h2>Available Controllers:</h2>
             <ul ng-cloak>
-                <li ng-repeat="c in indexCtrl.applicationData.controllers | orderBy:'name'" class="controller">
-                    <a ng-if="!indexCtrl.stateExists(c.logicalPropertyName+'.list')" ng-href="{{indexCtrl.contextPath}}/{{c.logicalPropertyName}}">{{c.name}}</a>
-                    <a ng-if="indexCtrl.stateExists(c.logicalPropertyName+'.list')" ui-sref="{{c.logicalPropertyName}}.list">{{c.name}}</a>
+                <li ng-repeat="c in vm.applicationData.controllers | orderBy:'name'" class="controller">
+                    <a ng-if="!vm.stateExists(c.logicalPropertyName+'.list')" ng-href="{{vm.contextPath}}/{{c.logicalPropertyName}}">{{c.name}}</a>
+                    <a ng-if="vm.stateExists(c.logicalPropertyName+'.list')" ui-sref="{{c.logicalPropertyName}}.list">{{c.name}}</a>
                 </li>
             </ul>
         </div>
+
+        <h2 ng-show="vm.jwt">Your JWT is:</h2>
+        <pre ng-show="vm.jwt" class="jwt"><code>{{vm.jwt}}</code></pre>
+        <h2 ng-show="vm.jwt"> JWT decoded:</h2>
+        <pre ng-show="vm.jwt" class="jwt"><code>{{vm.decodedJwt | json}}</code></pre>
     </section>
+
 </div>

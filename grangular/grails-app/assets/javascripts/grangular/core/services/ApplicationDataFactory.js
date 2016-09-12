@@ -1,10 +1,10 @@
 //= wrapped
 
 angular
-    .module("grangular.index")
-    .factory("applicationDataFactory", applicationDataFactory);
+    .module("grangular.core")
+    .factory("ApplicationDataFactory", ApplicationDataFactory);
 
-function applicationDataFactory($http) {
+function ApplicationDataFactory($http) {
     return {
         get: function() {
             return $http({method: "GET", url: "application"});

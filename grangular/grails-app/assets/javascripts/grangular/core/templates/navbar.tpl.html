@@ -1,0 +1,59 @@
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="navExpanded = !navExpanded">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/#">
+                <i class="fa grails-icon">
+                    <asset:image src="grails-cupsonly-logo-white.svg"/>
+                </i> Grails
+            </a>
+        </div>
+        <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;" uib-collapse="!navExpanded">
+            <ul class="nav navbar-nav navbar-right" ng-switch on="vm.isLoggedIn()">
+                <li class="dropdown" uib-dropdown>
+                    <a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li><a href="#">Environment: {{vm.applicationData.environment}}</a></li>
+                        <li><a href="#">App profile: {{vm.applicationData.appprofile}}</a></li>
+                        <li><a href="#">App version: {{vm.applicationData.appversion}}</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Grails version: {{vm.applicationData.grailsversion}}</a></li>
+                        <li><a href="#">Groovy version: {{vm.applicationData.groovyversion}}</a></li>
+                        <li><a href="#">JVM version: {{vm.applicationData.jvmversion}}</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Reloading active: {{vm.applicationData.reloadingagentenabled}}</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" uib-dropdown>
+                    <a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Artefacts <span class="caret"></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li><a href="#">Controllers: {{vm.applicationData.artefacts.controllers}}</a></li>
+                        <li><a href="#">Domains: {{vm.applicationData.artefacts.domains}}</a></li>
+                        <li><a href="#">Services: {{vm.applicationData.artefacts.services}}</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" uib-dropdown>
+                    <a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li ng-repeat="plugin in vm.applicationData.plugins"><a href="#">{{plugin.name}} - {{plugin.version}}</a></li>
+                    </ul>
+                </li>
+
+                <li ng-switch-when="true" class="dropdown" uib-dropdown>
+                    <a href="#" class="dropdown-toggle" uib-dropdown-toggle role="button" aria-haspopup="true" aria-expanded="false">{{vm.getProfile().username | uppercase}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li><a ui-sref="settings">Settings</a></li>
+                        <li><a ng-click="vm.logout()">Logout</a></li>
+                    </ul>
+                </li>
+                <li ng-switch-default><a ng-click="vm.login()">Login</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>

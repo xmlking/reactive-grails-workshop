@@ -10,8 +10,6 @@
 
 angular.module("grangular.index", [
     "grangular.core",
-    "ui.bootstrap.dropdown",
-    "ui.bootstrap.collapse",
     "ui.router"
 ])
 .config(config);
@@ -20,6 +18,7 @@ function config($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('index', {
             url: "/",
+            controller: "IndexController as vm",
             templateUrl: "/grangular/index/index.html"
         });
 
