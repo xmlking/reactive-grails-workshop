@@ -39,7 +39,10 @@ grails> stop
 To get a token, make a request to the login endpoint provided by the plugin:
 
 ```bash
+# For ROLE_USER
 curl -i -H "Content-Type: application/json" --data '{"username":"basic3","password":"basic123"}' 0:9080/api/login
+# For ROLE_ADMIN
+curl -i -H "Content-Type: application/json" --data '{"username":"admin","password":"admin123"}' 0:9080/api/login
 ```
 
 Verify access_token with https://jwt.io/
@@ -48,7 +51,9 @@ Verify access_token with https://jwt.io/
 Copy the access_token part of the response, and make a request to the original endpoint, passing the token in the header:
 
 ```bash
+# Try with ROLE_ADMIN token
 curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:9080/api/users
+# Try with ROLE_USER token or ROLE_ADMIN token
 curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:9080/api/test
 ```
 
