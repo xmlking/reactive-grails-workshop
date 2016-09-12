@@ -76,7 +76,7 @@ function run($rootScope, authManager, $timeout, AuthenticationService) {
 
     $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         $rootScope.spinner = false;
-        // $rootScope.destinationState = false;
+        $rootScope.destinationState = false;
     });
 
     $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {

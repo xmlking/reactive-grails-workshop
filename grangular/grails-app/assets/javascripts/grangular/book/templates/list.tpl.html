@@ -1,0 +1,42 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a ui-sref="index" class="home">Home</a></li>
+        <li><a ui-sref="book.create" class="create">New Book</a></li>
+    </ul>
+</div>
+<div id="list-book" class="content scaffold-list" role="main">
+    <h1>Book List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>ISBN</th>
+      <th>Price</th>
+      <th>Release Date</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-class="{'even': $index%2 == 0, 'odd': $index%2 == 1}" ng-repeat="book in vm.bookList">
+      <td>
+        <a ui-sref="book.show({id: book.id})">{{book.id}}</a>
+      </td>
+      <td>
+        <span>{{book.ISBN}}</span>
+      </td>
+      <td>
+        <span>{{book.price}}</span>
+      </td>
+      <td>
+        <span>{{book.releaseDate | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>
+      </td>
+      <td>
+        <span>{{book.title}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <!--    <div class="pagination">
+            <g:paginate total="${partCount ?: 0}" />
+        </div>-->
+</div>

@@ -26,7 +26,6 @@ function LoginController ($rootScope, $state, $timeout, AuthenticationService, $
             vm.authenticationError = false;
             $uibModalInstance.close(result);
 
-            console.log('destination State', $rootScope.destinationState);
             // redirect to view that is requested before 401/403 error occurred.
             if ($rootScope.destinationState) {
                 $state.go($rootScope.destinationState.state.name, $rootScope.destinationState.stateParams);

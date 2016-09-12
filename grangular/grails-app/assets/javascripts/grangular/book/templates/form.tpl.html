@@ -1,0 +1,26 @@
+<fieldset class="form">
+  <div class="fieldcontain required">
+    <label for="ISBN">ISBN
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="ISBN" id="ISBN" ng-model="vm.book.ISBN" type="text" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="price">Price
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="price" id="price" ng-model="vm.book.price" type="number" step="any" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="releaseDate">Release Date
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="releaseDate" id="releaseDate" ng-model="vm.book.releaseDate" type="date" placeholder="YYYY-MM-DD" />
+  </div>
+  <div class="fieldcontain required">
+    <label for="title">Title
+      <span class="required-indicator">*</span>
+    </label>
+    <input required="" name="title" id="title" ng-model="vm.book.title" type="text" />
+  </div>
+</fieldset>
