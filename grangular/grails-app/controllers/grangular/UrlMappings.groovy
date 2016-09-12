@@ -16,5 +16,7 @@ class UrlMappings {
         "/api/todos"(resources:'todo')
         "/api/pendingTodos"(controller: 'todo', action: 'pending')
         "/api/guest/stream"(resources:'stream')
+        "/api/books"(resources:'book')
+        "/api/test"(controller:"book", action: 'testAction',  method:"GET")
     }
 }

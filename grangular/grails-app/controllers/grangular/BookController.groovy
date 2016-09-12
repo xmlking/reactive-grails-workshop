@@ -5,6 +5,7 @@ import grails.rx.web.RxController
 import grails.validation.ValidationException
 import groovy.transform.CompileStatic
 
+import static groovy.transform.TypeCheckingMode.SKIP
 import static org.springframework.http.HttpStatus.*
 import static rx.Observable.*
 import grails.rx.web.*
@@ -17,14 +18,18 @@ class BookController implements RxController {
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
+    //SUMO: Custom action
+    @CompileStatic(SKIP)
+    @Secured('ROLE_USER')
     def testAction() {
         def user = springSecurityService.principal
-        log.error( user.firstName)
-//        log.error( user.organizationId)
-//        log.error( springSecurityService.currentUser?.organization?.name)
+        log.error(user.username)
+        log.error(user.authorities.join(","))
+        //log.error(user.organizationId)
         render "test done"
     }
 
+    @CompileStatic(SKIP)
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         zip( Book.list(params), Book.count() ) { List bookList, Number count ->
