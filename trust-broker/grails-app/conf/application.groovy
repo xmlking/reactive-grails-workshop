@@ -9,6 +9,12 @@ grails.plugin.springsecurity.rest.token.storage.jwt.secret = 'qrD6h8K6S9503Q06Y6
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'trustbroker.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'trustbroker.UserRole'
 grails.plugin.springsecurity.authority.className = 'trustbroker.Role'
+
+grails.plugin.springsecurity.roleHierarchy = '''
+   ROLE_SUPERADMIN > ROLE_ADMIN
+   ROLE_ADMIN > ROLE_USER
+'''
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         [pattern: '/',               access: ['permitAll']],
         [pattern: '/error',          access: ['permitAll']],
