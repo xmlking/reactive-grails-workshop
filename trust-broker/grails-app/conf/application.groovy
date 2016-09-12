@@ -1,3 +1,10 @@
+// For spring security rest
+grails.plugin.springsecurity.rest.token.storage.jwt.expiration = 3600
+grails.plugin.springsecurity.rest.token.storage.jwt.secret = 'qrD6h8K6S9503Q06Y6Rfk21TErImPYqa'
+//grails.plugin.springsecurity.rest.token.storage.jwt.useEncryptedJwt = true
+//grails.plugin.springsecurity.rest.token.storage.jwt.privateKeyPath = '/path/to/private_key.der'
+//grails.plugin.springsecurity.rest.token.storage.jwt.publicKeyPath = '/path/to/public_key.der'
+
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'trustbroker.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'trustbroker.UserRole'
