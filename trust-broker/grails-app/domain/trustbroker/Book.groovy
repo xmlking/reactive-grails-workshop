@@ -9,8 +9,8 @@ class Book {
     String ISBN
     Double price
     static constraints = {
-        releaseDate(nullable: true)
+        releaseDate nullable: true
         ISBN(nullable: true, blank: true)
-        price(nullable: true)
+        price nullable: true
     }
 }
