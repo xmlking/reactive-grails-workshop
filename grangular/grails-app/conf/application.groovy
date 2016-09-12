@@ -1,6 +1,12 @@
 // Spring-Security-Rest plugin:
 grails.plugin.springsecurity.rest.login.active = false
+grails.plugin.springsecurity.rest.token.storage.jwt.secret = 'qrD6h8K6S9503Q06Y6Rfk21TErImPYqa'
+
 // Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.roleHierarchy = '''
+   ROLE_SUPERADMIN > ROLE_ADMIN
+   ROLE_ADMIN > ROLE_USER
+'''
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         [pattern: '/',               access: ['permitAll']],
         [pattern: '/error',          access: ['permitAll']],
