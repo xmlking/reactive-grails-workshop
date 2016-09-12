@@ -11,9 +11,12 @@ grails create-app grangular --profile angular --features rx-mongodb,json-views,a
 cd grangular
 grails 
 # at grails prompt: Generate Todo domain, controller and views
+create-domain-class Todo
+# modifiy 'Todo' class to implements RxMongoEntity<Todo>
 generate-rx-all Todo
 # Generate Angular artifacts for Todo
 ng-generate-all grangular.Todo 
+# Repete above commands for 'Book'
 ```
 
 

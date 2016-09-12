@@ -8,9 +8,6 @@ class BootStrap {
         if(!User.count()) {
             createUsers()
         }
-        if(!Book.count()) {
-            createEntities()
-        }
     }
     def destroy = {
     }
@@ -48,8 +45,4 @@ class BootStrap {
 
     }
 
-    private void createEntities() {
-        new Book(title: 'Book1', ISBN: 'BOOK1', releaseDate: new Date(), price: 35.45).save(failOnError: true)
-        new Book(title: 'Book2', ISBN: 'BOOK2', releaseDate: new Date(), price: 24.99).save(failOnError: true)
-    }
 }
