@@ -13,3 +13,13 @@
 *= require mobile
 *= require_self
 */
+
+
+/* center spinner
+-------------------------------------------------- */
+.center {
+    position:fixed !important;
+    top: 30%;
+    left: 50%;
+    z-index: 50;
+}
