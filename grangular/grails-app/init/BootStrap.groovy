@@ -24,7 +24,7 @@ class BootStrap {
     private void createBooks() {
         println "Creating Book Entities... "
         5.times {
-            new Book(title: 'Book  ${it+1}', ISBN: 'BOOK  ${it+1}', releaseDate: new Date(), price: 35.45 +it).save().toBlocking().first()
+            new Book(title: "Book  ${it+1}", ISBN: "BOOK  ${it+1}", releaseDate: new Date(), price: 35.45 +it).save().toBlocking().first()
         }
     }
 }
