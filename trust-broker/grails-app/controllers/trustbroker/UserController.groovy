@@ -15,6 +15,7 @@ class UserController extends RestfulController {
         super(User)
     }
 
+    @Secured('ROLE_USER')
     def testAction() {
         def user = springSecurityService.principal
         log.error( user.firstName)
