@@ -18,6 +18,10 @@ RxJS(Angular) ->  Reactive Controller ->  RxGORM -> MongoDB
 2. *Single Page Application(SPA)* front-end app.
     - [x] Angular 1.5
     - [ ] Angular 2.0
+    - [x] Authentication: JWT, Auto Token Refresh - RememberMe,  AuthInterceptor - 401,203,419,440  
+    - [x] Layout - spinner, bootstrap theme
+    - [ ] Notifications 
+    - [ ] Authorization
  
 
 #### Setup
