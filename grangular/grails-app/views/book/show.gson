@@ -1,0 +1,7 @@
+import grangular.Book
+
+model {
+	Book book
+}
+
+json tmpl.book(book)
