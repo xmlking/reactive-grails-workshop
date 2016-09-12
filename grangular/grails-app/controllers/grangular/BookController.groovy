@@ -1,5 +1,6 @@
 package grangular
 
+import grails.plugin.springsecurity.annotation.Secured
 import grails.rx.web.RxController
 import grails.validation.ValidationException
 import groovy.transform.CompileStatic
@@ -8,11 +9,21 @@ import static org.springframework.http.HttpStatus.*
 import static rx.Observable.*
 import grails.rx.web.*
 
+@Secured('ROLE_ADMIN')
 @CompileStatic
 class BookController implements RxController {
+    def springSecurityService
 
     static responseFormats = ['json', 'xml']
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+
+    def testAction() {
+        def user = springSecurityService.principal
+        log.error( user.firstName)
+//        log.error( user.organizationId)
+//        log.error( springSecurityService.currentUser?.organization?.name)
+        render "test done"
+    }
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
