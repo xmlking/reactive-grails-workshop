@@ -1,0 +1,7 @@
+import trustbroker.User
+
+model {
+	User user
+}
+
+json tmpl.user(user)

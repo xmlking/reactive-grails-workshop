@@ -1,20 +1,20 @@
 package trustbroker
 
-
 import grails.rest.*
 import grails.converters.*
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.web.bind.annotation.CrossOrigin
 
-@CrossOrigin(origins = "http://localhost:3000")
-@Secured('ROLE_USER')
-class BookController extends RestfulController {
+//@CrossOrigin(origins = "http://localhost:3000")
+@Secured('ROLE_ADMIN')
+class UserController extends RestfulController {
     def springSecurityService
 
     static responseFormats = ['json', 'xml']
-    BookController() {
-        super(Book)
+    UserController() {
+        super(User)
     }
+
     def testAction() {
         def user = springSecurityService.principal
         log.error( user.firstName)

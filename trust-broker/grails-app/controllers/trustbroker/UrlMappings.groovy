@@ -13,7 +13,7 @@ class UrlMappings {
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')
         "404"(view: '/notFound')
-        "/api/books"(resources:'book')
-        "/api/test"(controller:"book", action: 'testAction',  method:"GET")
+        "/api/users"(resources:'user')
+        "/api/test"(controller:"user", action: 'testAction',  method:"GET")
     }
 }

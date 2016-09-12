@@ -48,7 +48,7 @@ Verify access_token with https://jwt.io/
 Copy the access_token part of the response, and make a request to the original endpoint, passing the token in the header:
 
 ```bash
-curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:9080/api/books
+curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:9080/api/users
 curl -i -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9...." 0:9080/api/test
 ```
 

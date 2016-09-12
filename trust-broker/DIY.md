@@ -13,9 +13,8 @@ grails
 # at grails prompt: Generate User, Role, UserRole domains
 s2-quickstart trustbroker User Role
 create-domain-class Organization
-create-domain-class Book
-create-restful-controller Book
-generate-views Book
+create-restful-controller User
+generate-views User
 ```
 
 add security filter for [/api/**](http://alvarosanchez.github.io/grails-angularjs-springsecurity-workshop/#_securing_the_rest_api_20_minutes)
