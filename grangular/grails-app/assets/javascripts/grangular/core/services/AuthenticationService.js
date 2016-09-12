@@ -181,9 +181,7 @@ function AuthenticationService($http, CONFIG, AUTH_EVENTS, HttpBuffer, $state, L
     function redirectWhenUnAuthorized() {
         $rootScope.$on(AUTH_EVENTS.unAuthorized, function () {
             console.log('unAuthorized');
-            logout().then( function () {
-                $state.go('accessdenied');
-            })
+            $state.go('accessdenied');
         });
     }
 
